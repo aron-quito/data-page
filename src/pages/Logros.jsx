@@ -6,8 +6,8 @@ const achievements = [
     emoji: '🏆',
     number: '1er Puesto',
     event: 'Foro Binacional de Investigación',
-    location: 'Perú – Bolivia',
-    year: '2024',
+    location: 'Perú – Tacna',
+    year: '2025',
     description:
       'Primer lugar internacional en el foro binacional por el desarrollo y viabilidad social de KineDa, reconociendo la innovación técnica del hardware IoT y su impacto en la seguridad geriátrica.',
     highlight: true,
@@ -18,7 +18,7 @@ const achievements = [
     number: '2do Lugar',
     event: 'Congreso Nacional de Computación',
     location: 'Huancayo, Perú',
-    year: '2024',
+    year: '2025',
     description:
       'Segundo puesto a nivel nacional en la categoría de investigación aplicada, validando la rigurosidad científica de nuestros modelos híbridos CNN-1D + BiLSTM frente a otros centros de investigación del país.',
     highlight: true,
