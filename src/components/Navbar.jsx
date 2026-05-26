@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 const navItems = [
   { label: 'Inicio', to: '/' },
   { label: 'Proyectos', to: '/proyectos' },
-  { label: 'Integrantes', to: '/integrantes' },
+  { label: 'Equipo', to: '/integrantes' },
   { label: 'Logros', to: '/logros' },
 ]
 
@@ -22,7 +22,7 @@ export default function Navbar() {
     <header className={`header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <nav className="nav">
-          <NavLink to="/" className="logo">DATA-ESIS</NavLink>
+          <NavLink to="/" className="logo">ORION</NavLink>
 
           <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
             {navItems.map(({ label, to }) => (

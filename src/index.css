@@ -704,3 +704,26 @@ a { text-decoration: none; }
   .hero-ctas { flex-direction: column; }
   .pillars-grid { grid-template-columns: 1fr; }
 }
+
+/* ══════════════════════════════════════════════
+   CONTACT FORM & ADDITIONAL ORION STYLES
+   ══════════════════════════════════════════════ */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  transition: border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--accent-cyan) !important;
+  box-shadow: 0 0 10px rgba(100, 255, 218, 0.3);
+}
+
+.contact-form select option {
+  background: var(--bg-navy);
+  color: var(--text-primary);
+}
+

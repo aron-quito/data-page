@@ -2,71 +2,16 @@ import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 const projects = [
   {
-    id: 'iot-falls',
+    id: 'kineda-fall-detection',
     icon: 'fa-solid fa-tower-broadcast',
-    status: 'Completado',
+    status: 'Desarrollo Activo',
     statusColor: 'cyan',
-    year: '2024',
-    title: 'Detección de Caídas mediante IoT',
+    year: '2024 - Presente',
+    title: 'KineDa: Dispositivo Inteligente de Detección de Caídas',
     description:
-      'Sistema inteligente de monitoreo basado en sensores inerciales (MPU-6050) y análisis de series temporales en tiempo real. El modelo clasifica eventos de caída con alta precisión para respuesta de emergencia inmediata.',
-    tech: ['IoT', 'Python', 'Signal Processing', 'Predictive Modeling', 'Edge Computing'],
-  },
-  {
-    id: 'predictive-demand',
-    icon: 'fa-solid fa-chart-line',
-    status: 'En progreso',
-    statusColor: 'yellow',
-    year: '2025',
-    title: 'Análisis Predictivo de Demanda',
-    description:
-      'Modelado estocástico y aprendizaje profundo para la optimización de recursos en cadenas de suministro locales. Reducción de la incertidumbre operativa a través de pronósticos de series temporales con LSTM.',
-    tech: ['Deep Learning', 'LSTM', 'TensorFlow', 'Data Science', 'Time Series'],
-  },
-  {
-    id: 'ai-clinical',
-    icon: 'fa-solid fa-brain',
-    status: 'En progreso',
-    statusColor: 'yellow',
-    year: '2025',
-    title: 'IA en Diagnóstico Clínico',
-    description:
-      'Investigación sobre el uso de redes neuronales convolucionales (CNN) para el pre-diagnóstico asistido por computadora a partir de imágenes médicas de radiografías.',
-    tech: ['Computer Vision', 'CNN', 'PyTorch', 'Healthcare AI', 'OpenCV'],
-  },
-  {
-    id: 'nlp-academic',
-    icon: 'fa-solid fa-comment-dots',
-    status: 'Investigación',
-    statusColor: 'purple',
-    year: '2025',
-    title: 'NLP para Texto Académico',
-    description:
-      'Exploración de modelos de lenguaje natural para el análisis semántico y clasificación automática de producción científica universitaria en español.',
-    tech: ['NLP', 'Transformers', 'BERT', 'Python', 'Hugging Face'],
-  },
-  {
-    id: 'air-quality',
-    icon: 'fa-solid fa-wind',
-    status: 'Investigación',
-    statusColor: 'purple',
-    year: '2025',
-    title: 'Monitoreo de Calidad del Aire',
-    description:
-      'Red de sensores distribuidos y dashboard en tiempo real para el monitoreo de partículas contaminantes en zonas urbanas de Tacna, con alertas automáticas.',
-    tech: ['IoT', 'MQTT', 'Node-RED', 'Data Visualization', 'Time Series'],
-  },
-  {
-    id: 'agro-vision',
-    icon: 'fa-solid fa-seedling',
-    status: 'Planificado',
-    statusColor: 'slate',
-    year: '2026',
-    title: 'AgroVision: IA para Agricultura',
-    description:
-      'Sistema de visión computacional para la detección temprana de plagas y enfermedades en cultivos agrícolas de la región mediante análisis de imágenes satelitales y drones.',
-    tech: ['Computer Vision', 'Satellite Imagery', 'Deep Learning', 'GIS', 'Python'],
-  },
+      'Sistema wearable de seguridad geriátrica que procesa señales de acelerometría y giroscopio en tiempo real mediante algoritmos en el dispositivo (Edge Computing). Alerta de manera 100% autónoma a los familiares en caso de una caída, sin requerir la intervención del usuario.',
+    tech: ['IoT', 'ESP32', 'MPU6050', 'Edge Computing', 'Deep Learning', 'BiLSTM & CNN-1D'],
+  }
 ]
 
 const statusColors = {
@@ -110,11 +55,11 @@ export default function Proyectos() {
       {/* Page header */}
       <div className="page-hero">
         <div className="container">
-          <span className="section-pre fade-in" ref={titleRef}>Portafolio de Investigación</span>
-          <h1 className="page-hero-title">Nuestros Proyectos</h1>
+          <span className="section-pre fade-in" ref={titleRef}>Proyecto Principal</span>
+          <h1 className="page-hero-title">Nuestro Desarrollo</h1>
           <p className="page-hero-sub">
-            Aplicamos ciencia de datos e inteligencia artificial a problemas concretos.
-            Cada proyecto es una exploración rigurosa con impacto medible.
+            Diseñamos soluciones robustas de software y hardware. Conoce KineDa, nuestro 
+            proyecto insignia para salvaguardar la independencia de los adultos mayores.
           </p>
         </div>
       </div>
@@ -122,7 +67,7 @@ export default function Proyectos() {
       {/* Project grid */}
       <section className="page-content">
         <div className="container">
-          <div className="proj-page-grid">
+          <div className="proj-page-grid" style={{ gridTemplateColumns: '1fr', maxWidth: '800px', margin: '0 auto' }}>
             {projects.map((p) => <ProjectCard key={p.id} project={p} />)}
           </div>
         </div>

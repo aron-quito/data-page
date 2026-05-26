@@ -1,88 +1,42 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
-const advisor = {
-  id: 'taya',
-  icon: 'fa-solid fa-user-tie',
-  name: 'Ing. Taya',
-  role: 'Docente Asesor',
-  description:
-    'Docente investigador de la UNJBG. Dirige la visión científica y la dirección estratégica de las líneas de investigación del semillero DATA-ESIS.',
-  interests: ['Machine Learning', 'Data Science', 'Investigación Académica'],
-  links: [
-    { icon: 'fa-brands fa-linkedin', href: '#', label: 'LinkedIn' },
-    { icon: 'fa-solid fa-envelope', href: '#', label: 'Email' },
-  ],
-}
-
-const coordinator = {
-  id: 'coordinador',
-  icon: 'fa-solid fa-user-gear',
-  name: 'Coordinador General',
-  role: 'Coordinador del Semillero',
-  description:
-    'Responsable del liderazgo operativo, articulación de proyectos y representación del semillero en eventos académicos.',
-  interests: ['Data Strategy', 'AI Ethics', 'Project Management'],
-  links: [
-    { icon: 'fa-brands fa-github', href: '#', label: 'GitHub' },
-    { icon: 'fa-brands fa-linkedin', href: '#', label: 'LinkedIn' },
-  ],
-}
-
 const members = [
   {
-    id: 'dany',
-    icon: 'fa-solid fa-code',
-    name: 'Dany',
-    role: 'Investigador Senior',
-    description: 'Especialista en modelos predictivos, arquitecturas de aprendizaje profundo y procesamiento de lenguaje natural.',
-    interests: ['Machine Learning', 'NLP', 'Deep Learning'],
-    links: [
-      { icon: 'fa-brands fa-github', href: '#', label: 'GitHub' },
-      { icon: 'fa-brands fa-linkedin', href: '#', label: 'LinkedIn' },
-    ],
+    id: 'aron',
+    icon: 'fa-solid fa-user-gear',
+    name: 'Aron Cachicatari',
+    role: 'Coordinador',
+    description: 'Lidera la coordinación general y el desarrollo de los modelos de Deep Learning aplicados al análisis de señales de movimiento.',
+    email: 'acachicatariq@unjbg.edu.pe',
+    phone: '933765612',
+    interests: ['Deep Learning', 'Inteligencia Artificial', 'Coordinación'],
   },
   {
-    id: 'jhosep',
-    icon: 'fa-solid fa-database',
-    name: 'Jhosep',
-    role: 'Analista de Datos',
-    description: 'Enfocado en pipelines de datos, dashboards analíticos y optimización de consultas para grandes volúmenes.',
-    interests: ['Big Data', 'Data Visualization', 'SQL Optimization'],
-    links: [
-      { icon: 'fa-brands fa-github', href: '#', label: 'GitHub' },
-      { icon: 'fa-brands fa-linkedin', href: '#', label: 'LinkedIn' },
-    ],
+    id: 'erik',
+    icon: 'fa-solid fa-microchip',
+    name: 'Erik Bothguer',
+    role: 'Especialista en Hardware',
+    description: 'Responsable del diseño, integración y optimización del hardware del dispositivo KineDa y el procesamiento de señales inerciales.',
+    email: 'esbottgeri@unjbg.edu.pe',
+    phone: '930698006',
+    interests: ['Hardware IoT', 'Sistemas Embebidos', 'Edge Computing'],
   },
   {
     id: 'jhon',
-    icon: 'fa-solid fa-microchip',
-    name: 'Jhon Sebastian',
-    role: 'Desarrollador IoT',
-    description: 'Especialista en sistemas embebidos, integración de sensores y análisis de señales en tiempo real.',
-    interests: ['IoT', 'Edge Computing', 'Real-time Analytics'],
-    links: [
-      { icon: 'fa-brands fa-github', href: '#', label: 'GitHub' },
-      { icon: 'fa-brands fa-linkedin', href: '#', label: 'LinkedIn' },
-    ],
-  },
-  {
-    id: 'member4',
-    icon: 'fa-solid fa-chart-pie',
-    name: 'Investigador',
-    role: 'Data Scientist',
-    description: 'Orientado al análisis estadístico, modelado predictivo y comunicación de hallazgos a través de visualizaciones.',
-    interests: ['Statistics', 'Python', 'Power BI'],
-    links: [
-      { icon: 'fa-brands fa-github', href: '#', label: 'GitHub' },
-      { icon: 'fa-brands fa-linkedin', href: '#', label: 'LinkedIn' },
-    ],
+    icon: 'fa-solid fa-stethoscope',
+    name: 'Jhon Mamani',
+    role: 'DevOps & Ingeniería Biomédica',
+    description: 'Encargado del despliegue en la nube, automatización de procesos y el modelado biomédico para la protección geriátrica.',
+    email: 'jmamanianc@unjbg.edu.pe',
+    phone: '926260545',
+    interests: ['DevOps', 'Ingeniería Biomédica', 'Cloud Deployment'],
   },
 ]
 
-function MemberCard({ member, size = 'normal' }) {
+function MemberCard({ member }) {
   const ref = useScrollAnimation()
   return (
-    <div className={`member-full-card fade-in ${size}`} ref={ref} id={`member-${member.id}`}>
+    <div className="member-full-card fade-in" ref={ref} id={`member-${member.id}`}>
       <div className="member-full-image">
         <i className={member.icon}></i>
       </div>
@@ -90,16 +44,28 @@ function MemberCard({ member, size = 'normal' }) {
         <h3>{member.name}</h3>
         <span className="member-role">{member.role}</span>
         <p>{member.description}</p>
-        <ul className="project-tech" style={{ justifyContent: 'center', margin: '0.8rem 0' }}>
+        
+        {/* Contact info details */}
+        <div style={{ marginTop: '0.8rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', marginBottom: '4px' }}>
+            <i className="fa-solid fa-envelope" style={{ color: 'var(--accent-cyan)', fontSize: '0.8rem' }}></i>
+            <a href={`mailto:${member.email}`} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+              {member.email}
+            </a>
+          </div>
+          {member.phone && (
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+              <i className="fa-solid fa-phone" style={{ color: 'var(--accent-cyan)', fontSize: '0.8rem' }}></i>
+              <a href={`tel:${member.phone}`} style={{ color: 'var(--text-secondary)', textDecoration: 'none' }}>
+                {member.phone}
+              </a>
+            </div>
+          )}
+        </div>
+
+        <ul className="project-tech" style={{ justifyContent: 'center', margin: '1rem 0 0' }}>
           {member.interests.map((i) => <li key={i}>{i}</li>)}
         </ul>
-        <div className="member-links">
-          {member.links.map(({ icon, href, label }) => (
-            <a key={label} href={href} title={label} aria-label={label}>
-              <i className={icon}></i>
-            </a>
-          ))}
-        </div>
       </div>
     </div>
   )
@@ -112,11 +78,12 @@ export default function Integrantes() {
     <div className="page-wrapper">
       <div className="page-hero">
         <div className="container">
-          <span className="section-pre fade-in" ref={titleRef}>Conoce al Equipo</span>
-          <h1 className="page-hero-title">Nuestros Integrantes</h1>
+          <span className="section-pre fade-in" ref={titleRef}>Equipo Fundador</span>
+          <h1 className="page-hero-title">Quiénes Somos</h1>
           <p className="page-hero-sub">
-            Un equipo multidisciplinario de estudiantes e investigadores comprometidos
-            con la excelencia académica y el impacto real de la ciencia de datos.
+            Somos egresados y estudiantes de décimo superior de la Escuela de Ingeniería en
+            Informática y Sistemas (ESIS) de la Universidad Nacional Jorge Basadre Grohmann (UNJBG)
+            en Tacna, Perú, comprometidos con el desarrollo de tecnología profunda para la salud.
           </p>
         </div>
       </div>
@@ -124,30 +91,10 @@ export default function Integrantes() {
       <section className="page-content">
         <div className="container">
 
-          {/* Advisor */}
-          <div className="team-section-block">
-            <h2 className="team-section-label">
-              <span><i className="fa-solid fa-star" style={{ color: 'var(--accent-cyan)', marginRight: '8px' }}></i>Dirección Académica</span>
-            </h2>
-            <div className="team-single-center">
-              <MemberCard member={advisor} size="large" />
-            </div>
-          </div>
-
-          {/* Coordinator */}
-          <div className="team-section-block">
-            <h2 className="team-section-label">
-              <span><i className="fa-solid fa-diagram-project" style={{ color: 'var(--accent-cyan)', marginRight: '8px' }}></i>Coordinación</span>
-            </h2>
-            <div className="team-single-center">
-              <MemberCard member={coordinator} size="large" />
-            </div>
-          </div>
-
           {/* Members */}
-          <div className="team-section-block">
+          <div className="team-section-block" style={{ marginBottom: 0 }}>
             <h2 className="team-section-label">
-              <span><i className="fa-solid fa-users" style={{ color: 'var(--accent-cyan)', marginRight: '8px' }}></i>Equipo Investigador</span>
+              <span><i className="fa-solid fa-users" style={{ color: 'var(--accent-cyan)', marginRight: '8px' }}></i>Equipo de ORION</span>
             </h2>
             <div className="team-full-grid">
               {members.map((m) => <MemberCard key={m.id} member={m} />)}
