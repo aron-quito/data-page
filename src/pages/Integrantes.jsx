@@ -81,9 +81,7 @@ export default function Integrantes() {
           <span className="section-pre fade-in" ref={titleRef}>Equipo Fundador</span>
           <h1 className="page-hero-title">Quiénes Somos</h1>
           <p className="page-hero-sub">
-            Somos egresados y estudiantes de décimo superior de la Escuela de Ingeniería en
-            Informática y Sistemas (ESIS) de la Universidad Nacional Jorge Basadre Grohmann (UNJBG)
-            en Tacna, Perú, comprometidos con el desarrollo de tecnología profunda para la salud.
+            Somos estudiantes de la Escuela de Ingeniería en Informática y Sistemas (ESIS) de la Universidad Nacional Jorge Basadre Grohmann (UNJBG) en Tacna, Perú, fuertemente comprometidos con el desarrollo de tecnología. Nuestro objetivo principal es impactar directamente en la sociedad a través de nuestras soluciones informáticas. Creemos firmemente en la construcción de un Perú tecnológico e inteligente, y trabajamos cada día velando por la visión futurista de nuestro país, donde la innovación y el talento nacional sean el motor del progreso.
           </p>
         </div>
       </div>
