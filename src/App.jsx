@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+// 1. Cambiamos BrowserRouter por HashRouter
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
@@ -9,7 +10,8 @@ import Logros from './pages/Logros'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    // 2. Reemplazamos <BrowserRouter> por <HashRouter>
+    <HashRouter>
       <ScrollToTop />
       <Navbar />
       <main>
@@ -21,6 +23,6 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
-    </BrowserRouter>
+    </HashRouter>
   )
 }
